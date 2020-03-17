@@ -8,6 +8,7 @@ jobs:
       steps:
         - checkout
         - run:
+            shell: /bin/sh -e
             command: |
               bash --version
   bash_4_4:
@@ -42,6 +43,18 @@ jobs:
     docker:
       - image: bash:3.0
     <<: *commonSteps
+  bash_2_05b:
+    docker:
+      - image: sdolenc/debian-circleci:sarge
+    <<: *commonSteps
+  bash_2_05a:
+    docker:
+      - image: sdolenc/debian-circleci:woody
+    <<: *commonSteps
+  bash_2_03:
+    docker:
+      - image: sdolenc/debian-circleci:potato
+    <<: *commonSteps
 workflows:
   version: 2
   all:
@@ -55,3 +68,6 @@ workflows:
       - bash_3_2
       - bash_3_1
       - bash_3_0
+      - bash_2_05b
+      - bash_2_05a
+      - bash_2_03
