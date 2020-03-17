@@ -43,7 +43,7 @@ jobs:
       - image: bash:3.0
     <<: *commonSteps
 workflows:
-  version: 2.1
+  version: 2
   all:
     jobs:
       - 5_0
