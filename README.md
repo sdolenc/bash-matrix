@@ -14,3 +14,6 @@ run continuous integration across a bunch of bash versions (similar to https://g
 | 3.2      | Oct 2006 |
 | 3.1      | Dec 2005 |
 | 3.0      | Aug 2004 |
+| 2.05b    | Jul 2002 |
+| 2.05a    | Nov 2001 |
+| 2.03     | Feb 1999 |
