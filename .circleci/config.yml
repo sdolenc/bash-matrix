@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  5_0:
+  bash_5_0:
     docker:
       - image: bash:5.0
     <<: &commonSteps
@@ -10,35 +10,35 @@ jobs:
         - run:
             command: |
               bash --version
-  4_4:
+  bash_4_4:
     docker:
       - image: bash:4.4
     <<: *commonSteps
-  4_3:
+  bash_4_3:
     docker:
       - image: bash:4.3
     <<: *commonSteps
-  4_2:
+  bash_4_2:
     docker:
       - image: bash:4.2
     <<: *commonSteps
-  4_1:
+  bash_4_1:
     docker:
       - image: bash:4.1
     <<: *commonSteps
-  4_0:
+  bash_4_0:
     docker:
       - image: bash:4.0
     <<: *commonSteps
-  3_2:
+  bash_3_2:
     docker:
       - image: bash:3.2
     <<: *commonSteps
-  3_1:
+  bash_3_1:
     docker:
       - image: bash:3.1
     <<: *commonSteps
-  3_0:
+  bash_3_0:
     docker:
       - image: bash:3.0
     <<: *commonSteps
@@ -46,12 +46,12 @@ workflows:
   version: 2
   all:
     jobs:
-      - 5_0
-      - 4_4
-      - 4_3
-      - 4_2
-      - 4_1
-      - 4_0
-      - 3_2
-      - 3_1
-      - 3_0
+      - bash_5_0
+      - bash_4_4
+      - bash_4_3
+      - bash_4_2
+      - bash_4_1
+      - bash_4_0
+      - bash_3_2
+      - bash_3_1
+      - bash_3_0
