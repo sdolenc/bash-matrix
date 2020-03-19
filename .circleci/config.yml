@@ -1,5 +1,10 @@
-version: 2.1
+# use this however you see fit. feel free to optionally add either of the following comments to your file
+#
+# from github.com/sdolenc/bash-matrix/
+# or
+# inspired by github.com/sdolenc/bash-matrix/
 
+version: 2.1
 jobs:
   bash_5_0:
     docker:
@@ -8,7 +13,10 @@ jobs:
       steps:
         - checkout
         - run:
+            # bash 2.0 doesn't support set -o pipefail so we remove it by specifying the shell
+            # this line can be removed if you're only testing bash 3.0 or above
             shell: /bin/sh -e
+
             command: |
               bash --version
   bash_4_4:
@@ -45,15 +53,15 @@ jobs:
     <<: *commonSteps
   bash_2_05b:
     docker:
-      - image: sdolenc/debian-circleci:sarge
+      - image: debian/eol:sarge
     <<: *commonSteps
   bash_2_05a:
     docker:
-      - image: sdolenc/debian-circleci:woody
+      - image: debian/eol:woody
     <<: *commonSteps
   bash_2_03:
     docker:
-      - image: sdolenc/debian-circleci:potato
+      - image: debian/eol:potato
     <<: *commonSteps
 workflows:
   version: 2
