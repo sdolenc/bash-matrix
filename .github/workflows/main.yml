@@ -28,6 +28,7 @@ jobs:
     - name: Clone Repo
       uses: actions/checkout@v2
 
+    - name: Run Tests
       run: |
         bash --version | head -2
         echo "test"
